@@ -3,9 +3,14 @@ import { Comand } from "../comand/Comand"
 
 export const ComandSection = ({values}) => {
     return (
-        <Container>
+        <Container maxW={'450px'}>
             <Stack m={10}>
                 <Comand comand={`ZEFO:${values.bcf}:IDE;`} color={`yellow.200`} task={`SHOW ETME ID`}></Comand>
+                <Comand comand={`ZQRI:ETME,::VLAN48:ALL;`} color={`yellow.200`} task={`VERIFICAR ETME ID`}></Comand>
+                <Comand comand={`ZQKB:ETMA,0;`} color={`yellow.200`} task={`VERIFICAR ETMA`}></Comand>
+                <Comand comand={`ZQKB:ETMA,1;`} color={`yellow.200`} task={`VERIFICAR ETMA`}></Comand>
+                <Comand comand={`ZQKB:ETMA,2;`} color={`yellow.200`} task={`VERIFICAR ETMA`}></Comand>
+                <Comand comand={`ZQKB:ETMA,3;`} color={`yellow.200`} task={`VERIFICAR ETMA`}></Comand>
                 <Comand comand={`ZEFS:${values.bcf}:L;`} color={`blue.200`} task={`BLOQUEAR BCF`}></Comand>
                 <Comand comand={`ZEQS:BTS=${values.bts1}:L;`} color={`blue.200`} task={`BLOQUEAR BTS`}></Comand>
                 <Comand comand={`ZEQS:BTS=${values.bts2}:L;`} color={`blue.200`} task={`BLOQUEAR BTS`}></Comand>

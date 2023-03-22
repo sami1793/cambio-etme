@@ -4,10 +4,10 @@ import { ComandSection } from './components/comandSection/ComandSection'
 import { InputsSection } from './components/inputsSection/InputsSection'
 function App() {
   const [values, setValues] = useState({
-    bcf: 1,
-    bts1: 1,
-    bts2: 1,
-    bts3: 1,
+    bcf: 425,
+    bts1: 425,
+    bts2: 426,
+    bts3: 427,
     etme: 1
   });
 

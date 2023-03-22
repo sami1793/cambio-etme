@@ -1,11 +1,11 @@
 import {
   Box, NumberInput, NumberInputField,
-  NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, FormLabel, FormControl, Wrap, WrapItem, VStack
+  NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, FormLabel, FormControl, Wrap, WrapItem, VStack, InputGroup, InputLeftAddon, Input
 } from '@chakra-ui/react'
 import { InputElement } from '../inputElement/InputElement'
-export const InputsSection = ({values, setValues}) => {
-  const setBcfBts = (numberInput) =>{
-    setValues({...values, bcf:numberInput, bts1:numberInput, bts2:Number(numberInput)+1, bts3:Number(numberInput)+2})
+export const InputsSection = ({ values, setValues }) => {
+  const setBcfBts = (numberInput) => {
+    setValues({ ...values, bcf: numberInput, bts1: numberInput, bts2: Number(numberInput) + 1, bts3: Number(numberInput) + 2 })
   }
   return (
     <Box>
@@ -24,7 +24,7 @@ export const InputsSection = ({values, setValues}) => {
         <Wrap justify='center' spacing={5}>
           <WrapItem w='150px'>
             <InputElement title={`BTS`}>
-              <NumberInput value={values.bts1} min={0} max={99999} size='sm' onChange={(number)=>setValues({...values, bts1:number})}>
+              <NumberInput value={values.bts1} min={0} max={99999} size='sm' onChange={(number) => setValues({ ...values, bts1: number })}>
                 <NumberInputField bg={'white'} />
                 <NumberInputStepper>
                   <NumberIncrementStepper bg={'gray.300'} />
@@ -36,7 +36,7 @@ export const InputsSection = ({values, setValues}) => {
 
           <WrapItem w='150px'>
             <InputElement title={`BTS`}>
-              <NumberInput value={values.bts2} min={0} max={99999} size='sm' onChange={(number)=>setValues({...values, bts2:number})}>
+              <NumberInput value={values.bts2} min={0} max={99999} size='sm' onChange={(number) => setValues({ ...values, bts2: number })}>
                 <NumberInputField bg={'white'} />
                 <NumberInputStepper>
                   <NumberIncrementStepper bg={'gray.300'} />
@@ -49,7 +49,7 @@ export const InputsSection = ({values, setValues}) => {
 
           <WrapItem w='150px'>
             <InputElement title={`BTS`}>
-              <NumberInput value={values.bts3} min={0} max={99999} size='sm' onChange={(number)=>setValues({...values, bts3:number})} >
+              <NumberInput value={values.bts3} min={0} max={99999} size='sm' onChange={(number) => setValues({ ...values, bts3: number })} >
                 <NumberInputField bg={'white'} />
                 <NumberInputStepper>
                   <NumberIncrementStepper bg={'gray.300'} />
@@ -60,16 +60,30 @@ export const InputsSection = ({values, setValues}) => {
           </WrapItem>
         </Wrap>
 
+        <Wrap justify='center' spacing={5}>
+          <WrapItem w='180px'>
+            <InputElement title={`New ETME`}>
+              <NumberInput value={values.etme} min={0} max={4} size='sm' onChange={(number) => setValues({ ...values, etme: number })} >
+                <NumberInputField bg={'white'} />
+                <NumberInputStepper>
+                  <NumberIncrementStepper bg={'gray.300'} />
+                  <NumberDecrementStepper bg={'gray.300'} />
+                </NumberInputStepper>
+              </NumberInput>
+            </InputElement>
+          </WrapItem>
 
-        <InputElement title={`New ETME`}>
-          <NumberInput value={values.etme} min={0} max={4} size='sm' onChange={(number)=>setValues({...values, etme:number})} >
-            <NumberInputField bg={'white'} />
-            <NumberInputStepper>
-              <NumberIncrementStepper bg={'gray.300'} />
-              <NumberDecrementStepper bg={'gray.300'} />
-            </NumberInputStepper>
-          </NumberInput>
-        </InputElement>
+          <WrapItem w='180px'>
+            <InputElement title={`C/U-PLANE IP`}>
+              <InputGroup size={'sm'}>
+                <InputLeftAddon children='10.234.' bg={'white'} />
+                <Input type='text' placeholder='xxx.xxx' bg={'white'} w={200} onChange={(e)=> console.log(e.target.value)} />
+              </InputGroup>
+            </InputElement>
+          </WrapItem>
+        </Wrap>
+
+
 
       </VStack>
     </Box>
