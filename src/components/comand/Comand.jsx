@@ -1,12 +1,22 @@
 import { CopyIcon } from "@chakra-ui/icons"
-import { Flex, Text, Spacer, IconButton } from "@chakra-ui/react"
+import { Flex, Text, Spacer, IconButton, useToast } from "@chakra-ui/react"
 
 export const Comand = ({ comand, color, task }) => {
+
+    const toast = useToast();
 
     const copyComand = () => {
         navigator.clipboard.writeText(comand);
         // setShowCopy(true);
         // setTimeout(()=>setShowCopy(false),1000)
+
+        toast({
+            title: 'Comando copiado',
+            description: "",
+            status: 'success',
+            duration: 1000,
+            isClosable: true,
+          })
     }
 
     return (
