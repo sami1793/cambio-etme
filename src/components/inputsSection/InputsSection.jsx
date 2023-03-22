@@ -62,7 +62,7 @@ export const InputsSection = ({values, setValues}) => {
 
 
         <InputElement title={`New ETME`}>
-          <NumberInput defaultValue={1} min={0} max={99999} size='sm' >
+          <NumberInput value={values.etme} min={0} max={4} size='sm' onChange={(number)=>setValues({...values, etme:number})} >
             <NumberInputField bg={'white'} />
             <NumberInputStepper>
               <NumberIncrementStepper bg={'gray.300'} />

@@ -7,7 +7,8 @@ function App() {
     bcf: 1,
     bts1: 1,
     bts2: 1,
-    bts3: 1
+    bts3: 1,
+    etme: 1
   });
 
   return (    
